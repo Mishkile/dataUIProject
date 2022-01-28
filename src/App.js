@@ -36,7 +36,7 @@ function App() {
     }
     fetchData();
     setFirstLoad(true)
-    return () => {};
+    return () => { };
   }, []);
 
   useEffect(() => {
@@ -45,7 +45,7 @@ function App() {
     } else {
       setBodyClass("container pointer-events-on");
     }
-    return () => {};
+    return () => { };
   }, [isLoading]);
 
   function search(querry) {
@@ -90,6 +90,7 @@ function App() {
 
   function filterById(id, type) {
     if (type === "_todos") {
+      console.log(type);
       for (let i = 0; i < users.length; i++) {
         return todos.filter((todo) => todo.userId === id);
       }
@@ -121,12 +122,12 @@ function App() {
     } else {
       setLastUserId(
         users.length > 0
-        ? lastUserId.concat(Math.max.apply(null, lastUserId) + 1)
-        : lastUserId.concat(Math.max.apply(null, lastUserId))
+          ? lastUserId.concat(Math.max.apply(null, lastUserId) + 1)
+          : lastUserId.concat(Math.max.apply(null, lastUserId))
       )
     }
   }, [users]);
-  
+
 
 
 
@@ -162,11 +163,11 @@ function App() {
     setModalActive(false);
   }
 
-  useEffect(()=>{
-    if(lastUserId.length > 5){
+  useEffect(() => {
+    if (lastUserId.length > 5) {
       setLastUserId([Math.max.apply(null, lastUserId)])
     }
-  },[lastUserId])
+  }, [lastUserId])
 
   return (
     <Context.Provider
