@@ -90,7 +90,6 @@ function App() {
 
   function filterById(id, type) {
     if (type === "_todos") {
-      console.log(type);
       for (let i = 0; i < users.length; i++) {
         return todos.filter((todo) => todo.userId === id);
       }
